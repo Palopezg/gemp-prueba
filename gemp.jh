@@ -1,0 +1,27 @@
+
+
+entity Parametro {
+  Id  Long required ,
+  descripcion  String,
+  valor String,
+  businessId String
+}
+
+entity Producto {
+  Id  Long required,
+  descripcion  String,
+  activo Boolean,
+  
+}
+
+
+
+// Set pagination options
+paginate Productos, Parametros with pagination
+
+filter Parametros
+filter Productos
+ 
+
+
+// angularSuffix * with mySuffi
