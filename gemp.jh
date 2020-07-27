@@ -1,4 +1,4 @@
-entity Segment {
+entity Segmento {
   Id  Long required ,
   descripcion  String,
   valor String
@@ -22,7 +22,7 @@ entity AccountExecutive {
   
 }
 relationship ManyToOne {
-	AccountExecutive{segment(descripcion)} to Segment
+	AccountExecutive{segmento(descripcion)} to Segmento
 }
 
 relationship ManyToMany {
@@ -46,9 +46,9 @@ entity Product {
 
 
 // Set pagination options
-paginate Productos, Parametros, Segment, Region, AccountExecutive with pagination
+paginate Productos, Parametros, Segmento, Region, AccountExecutive with pagination
 
-filter Parametros, Segment, Region, AccountExecutive
+filter Parametros, Segmento, Region, AccountExecutive
 filter Productos
  
 
