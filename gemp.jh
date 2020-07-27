@@ -1,0 +1,56 @@
+entity Segment {
+  Id  Long required ,
+  descripcion  String,
+  valor String
+}
+
+entity Region {
+  Id  Long required,
+  descripcion  String,
+  valor String
+  
+}
+entity AccountExecutive {
+  Id  Long required,
+  nombre  String,
+  apellido  String,
+  telefono  String,
+  celular  String,  
+  mail  String,
+  repcom1  String,
+  repcom2  String
+  
+}
+relationship ManyToOne {
+	AccountExecutive to Segment
+}
+
+relationship ManyToMany {
+	AccountExecutive to Region
+}
+
+entity Parameter {
+  Id  Long required ,
+  descripcion  String,
+  valor String,
+  businessId String
+}
+
+entity Product {
+  Id  Long required,
+  descripcion  String,
+  activo Boolean
+  
+}
+
+
+
+// Set pagination options
+paginate Productos, Parametros, Segment, Region, AccountExecutive with pagination
+
+filter Parametros, Segment, Region, AccountExecutive
+filter Productos
+ 
+
+
+// angularSuffix * with mySuffi
